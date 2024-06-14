@@ -28,22 +28,24 @@ function calculate() {
     // Update the Gantt Chart
     const chartContainer = document.getElementById('chart');
     chartContainer.innerHTML = '';
-    const startTimeLabel = document.createElement('div');
-    startTimeLabel.textContent = '0';
-    chartContainer.appendChild(startTimeLabel);
     ganttData.forEach(item => {
         const div = document.createElement('div');
         div.classList.add('chart-bar');
         div.style.width = `${item.end - item.start}0px`;
         div.textContent = item.process;
 
-        const endTimeLabel = document.createElement('div');
-        endTimeLabel.classList.add('time-label');
-        endTimeLabel.textContent = item.end;
+        const startTimeLabel = document.createElement('div');
+        startTimeLabel.classList.add('time-label');
+        startTimeLabel.textContent = item.start;
 
+        chartContainer.appendChild(startTimeLabel);
         chartContainer.appendChild(div);
-        chartContainer.appendChild(endTimeLabel);
     });
+    // Add last time lable
+    const endTimeLabel = document.createElement('div');
+    endTimeLabel.classList.add('time-label');
+    endTimeLabel.textContent =  ganttData[ganttData.length - 1].end;
+    chartContainer.appendChild(endTimeLabel);
 
     // Update the times
     document.getElementById('avgResponseTime').textContent = avgResponseTime.toFixed(2);
