@@ -28,21 +28,19 @@ function calculate() {
     // Update the Gantt Chart
     const chartContainer = document.getElementById('chart');
     chartContainer.innerHTML = '';
+    const startTimeLabel = document.createElement('div');
+    startTimeLabel.textContent = 0;
+    chartContainer.appendChild(startTimeLabel);
     ganttData.forEach(item => {
         const div = document.createElement('div');
         div.classList.add('chart-bar');
         div.style.width = `${item.end - item.start}0px`;
         div.textContent = item.process;
 
-        const startTimeLabel = document.createElement('div');
-        startTimeLabel.classList.add('time-label');
-        startTimeLabel.textContent = item.start;
-
         const endTimeLabel = document.createElement('div');
         endTimeLabel.classList.add('time-label');
         endTimeLabel.textContent = item.end;
 
-        chartContainer.appendChild(startTimeLabel);
         chartContainer.appendChild(div);
         chartContainer.appendChild(endTimeLabel);
     });
