@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期末專題程式報告</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>期末專題程式報告</h1>
+        <p>請撰寫FCFS、SRT、優先權不可搶、RR的程式</p>
+    </header>
+    <main>
+        <section>
+            <h2>輸入參數</h2>
+            <form id="inputForm">
+                <label for="processes">輸入進程 (格式: CPU時間, 到達時間, 優先權):</label>
+                <textarea id="processes" rows="5" placeholder="例如: 5, 0, 1\n3, 2, 2"></textarea><br>
+                
+                <label for="rrQuantum">RR週期:</label>
+                <input type="number" id="rrQuantum" min="1" value="1"><br>
+                
+                <button type="button" onclick="calculate()">計算</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>計算結果</h2>
+            <div id="ganttChart">
+                <h3>甘特圖</h3>
+                <div id="chart"></div>
+            </div>
+            <div id="times">
+                <h3>時間數據</h3>
+                <p>平均回覆時間: <span id="avgResponseTime"></span></p>
+                <p>平均等待時間: <span id="avgWaitingTime"></span></p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
