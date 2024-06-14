@@ -27,28 +27,25 @@ function calculate() {
 
     // Update the Gantt Chart
     const chartContainer = document.getElementById('chart');
-    const timelineContainer = document.getElementById('timeline');
     chartContainer.innerHTML = '';
-    timelineContainer.innerHTML = '';
     ganttData.forEach(item => {
         const div = document.createElement('div');
         div.classList.add('chart-bar');
         div.style.width = `${item.end - item.start}0px`;
         div.textContent = item.process;
+
+        const startTimeLabel = document.createElement('div');
+        startTimeLabel.classList.add('time-label');
+        startTimeLabel.textContent = item.start;
+
+        const endTimeLabel = document.createElement('div');
+        endTimeLabel.classList.add('time-label');
+        endTimeLabel.textContent = item.end;
+
+        chartContainer.appendChild(startTimeLabel);
         chartContainer.appendChild(div);
-        
-        const timeDiv = document.createElement('div');
-        timeDiv.classList.add('timeline-marker');
-        timeDiv.style.left = `${item.start}0px`;
-        timeDiv.textContent = item.start;
-        timelineContainer.appendChild(timeDiv);
+        chartContainer.appendChild(endTimeLabel);
     });
-    // 最後的時間節點
-    const endTimeDiv = document.createElement('div');
-    endTimeDiv.classList.add('timeline-marker');
-    endTimeDiv.style.left = `${ganttData[ganttData.length - 1].end}0px`;
-    endTimeDiv.textContent = ganttData[ganttData.length - 1].end;
-    timelineContainer.appendChild(endTimeDiv);
 
     // Update the times
     document.getElementById('avgResponseTime').textContent = avgResponseTime.toFixed(2);
