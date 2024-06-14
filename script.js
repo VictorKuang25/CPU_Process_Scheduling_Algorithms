@@ -29,7 +29,7 @@ function calculate() {
     const chartContainer = document.getElementById('chart');
     chartContainer.innerHTML = '';
     const startTimeLabel = document.createElement('div');
-    startTimeLabel.textContent = 0;
+    startTimeLabel.textContent = '0';
     chartContainer.appendChild(startTimeLabel);
     ganttData.forEach(item => {
         const div = document.createElement('div');
