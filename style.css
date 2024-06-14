@@ -59,3 +59,9 @@ button:hover {
     color: white;
     line-height: 30px;
 }
+
+.time-label {
+    position: absolute;
+    top: -20px;
+    font-size: 12px;
+}
