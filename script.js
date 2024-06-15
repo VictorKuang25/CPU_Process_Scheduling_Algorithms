@@ -1,7 +1,7 @@
 function calculate() {
-    const processes = document.getElementById('processes').value.trim().split('\n').map(line => {
-        const [cpuTime, arrivalTime, priority] = line.split(',').map(Number);
-        return { cpuTime, arrivalTime, priority, remainingTime: cpuTime, startTime: null, endTime: null };
+    const processes = document.getElementById('processes').value.trim().split('\n').map((line, index) => {
+        const [cpuTime, arrivalTime, priority] = line.split(',').map(Number);    // JS結構賦值
+        return { processId: index + 1, cpuTime, arrivalTime, priority, remainingTime: cpuTime, startTime: null, endTime: null };
     });
     const rrQuantum = parseInt(document.getElementById('rrQuantum').value, 10);
     const algorithm = document.getElementById('algorithm').value;
@@ -63,7 +63,7 @@ function fcfs(processes) {
         process.startTime = currentTime;
         currentTime += process.cpuTime;
         process.endTime = currentTime;
-        ganttData.push({ processId: `P${processes.indexOf(process) + 1}`, start: process.startTime, end: process.endTime });
+        ganttData.push({ processId: `P${processes.processId}`, start: process.startTime, end: process.endTime });
     });
     return ganttData;
 }
