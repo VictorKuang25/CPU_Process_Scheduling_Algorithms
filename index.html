@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>期末專題程式報告</title>
+    <title>作業系統 期末專題程式</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>期末專題程式報告</h1>
-        <p>請撰寫FCFS、SRT、優先權不可搶、RR的程式</p>
+        <h1>作業系統期末專題</h1>
+        <p>CPU排程演算法</p>
     </header>
     <main>
         <section>
@@ -24,7 +24,7 @@
                 </select><br>
 
                 <label for="processes">輸入進程 (格式: CPU時間, 到達時間, 優先權):</label>
-                <textarea id="processes" rows="5" placeholder="例如: 5, 0, 1\n3, 2, 2"></textarea><br>
+                <textarea id="processes" rows="5" placeholder="範例: &#10;5, 0, 1 &#10;3, 2, 2 &#10;3, 2, 2"></textarea><br>
 
                 <label for="rrQuantum">RR週期 (僅對RR有效):</label>
                 <input type="number" id="rrQuantum" min="1" value="1"><br>
@@ -37,7 +37,6 @@
             <div id="ganttChart">
                 <h3>甘特圖</h3>
                 <div id="chart"></div>
-                <div id="timeline"></div>
             </div>
             <div id="times">
                 <h3>時間數據</h3>
