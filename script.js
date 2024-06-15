@@ -63,7 +63,7 @@ function fcfs(processes) {
         process.startTime = currentTime;
         currentTime += process.cpuTime;
         process.endTime = currentTime;
-        ganttData.push({ processId: `P${processes.processId}`, start: process.startTime, end: process.endTime });
+        ganttData.push({ processId: `P-${processes.processId}`, start: process.startTime, end: process.endTime });
     });
     return ganttData;
 }
