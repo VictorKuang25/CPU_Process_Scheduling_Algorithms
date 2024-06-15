@@ -1,7 +1,7 @@
 function calculate() {
     const processes = document.getElementById('processes').value.trim().split('\n').map((line, index) => {
         const [cpuTime, arrivalTime, priority] = line.split(',').map(Number);    // JS結構賦值
-        return { processId: index + 1, cpuTime, arrivalTime, priority, remainingTime: cpuTime, startTime: null, endTime: null };
+        return { processId: parseInt(index) + 1, cpuTime, arrivalTime, priority, remainingTime: cpuTime, startTime: null, endTime: null };
     });
     const rrQuantum = parseInt(document.getElementById('rrQuantum').value, 10);
     const algorithm = document.getElementById('algorithm').value;
