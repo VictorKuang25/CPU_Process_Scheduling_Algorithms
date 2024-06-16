@@ -9,7 +9,8 @@
 組別資訊 : null  
 姓名：匡立恆  
 學號：D1104183039  
-程式執行環境：Web Browser
+程式執行環境：Web Browser  
+執行程式：https://victorkuang25.github.io/CPU_Process_Scheduling_Algorithms/
 
 輸入格式: CPU週期, 到達時間, 優先權 (換行輸入下一行程)   
 輸入範例:   
