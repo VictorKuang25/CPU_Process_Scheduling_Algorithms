@@ -154,7 +154,7 @@ function rr(processes, quantum) {
     listing.sort((a, b) => a.arrivalTime - b.arrivalTime);
     currentTime = listing[0].arrivalTime;
     while (listing.length > 0 || processingQueue.length > 0) {
-        alert('current time : ' + currentTime + '\n' + JSON.stringify(processingQueue))
+        // alert('current time : ' + currentTime + '\n' + JSON.stringify(processingQueue))
         let process = null;
         if (processingQueue.length > 0) {
             // Queue FIFO(FCFS)
